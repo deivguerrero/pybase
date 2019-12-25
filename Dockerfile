@@ -8,7 +8,7 @@ RUN yum update -y && \
     libffi-devel \
     bzip2 \
     bzip2-devel \
-    sqlite \ 
+    sqlite \
     sqlite-devel \
     zlib \
     zlib-devel \
@@ -24,7 +24,7 @@ RUN yum update -y && \
     readline-devel \
     libxml2-devel \
     libxslt-devel \
-    python-devel \ 
+    python-devel \
     python-pip \
     python-setuptools \
     python-wheel \
@@ -44,11 +44,10 @@ RUN yum update -y && \
 ENV HOME  /home/python_user
 ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-
 RUN curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash && \
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc && \
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
-    echo 'eval "$(pyenv init -)"' >> ~/.bashrc && \    
+    echo 'eval "$(pyenv init -)"' >> ~/.bashrc && \
     echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc && \
     exec "$SHELL"
 RUN pyenv install 3.8.0 && \
