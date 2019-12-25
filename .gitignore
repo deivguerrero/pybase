@@ -1,0 +1,8 @@
+.DS_Store
+.localized
+.idea/
+.vscode/
+*.codekit3
+*.py[cod]
+*.sql
+*.log
